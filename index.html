@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora de Métodos Numéricos</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        input, button { padding: 10px; margin: 5px; font-size: 16px; }
+        h1, h2 { color: #333; }
+    </style>
+</head>
+<body>
+    <h1>Calculadora de Métodos Numéricos</h1>
+    <input id="input-x" type="number" value="1" step="any">
+    <button onclick="calcular()">Calcular</button>
+    <h2>Resultado: <span id="resultado">-</span></h2>
+
+    <script>
+        // Función para calcular sin(x) + x²
+        function miFuncion(x) {
+            return Math.sin(x) + Math.pow(x, 2);
+        }
+
+        // Función que se llama desde el botón
+        function calcular() {
+            // Obtenemos el valor del input
+            const valorInput = document.getElementById("input-x").value;
+            // Lo convertimos a número
+            const x = parseFloat(valorInput);
+            // Calculamos el resultado
+            const resultadoCalculado = miFuncion(x);
+            // Escribimos el resultado en la página
+            document.getElementById("resultado").textContent = resultadoCalculado.toFixed(6);
+        }
+    </script>
+</body>
+</html>
