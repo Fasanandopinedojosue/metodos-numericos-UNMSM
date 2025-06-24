@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Numerical Works – Suite Web</title>
+
+  <!-- Hoja de estilos -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- PyScript 2025.5.1 -->
+  <link rel="stylesheet"
+        href="https://pyscript.net/releases/2025.5.1/core.css" />
+  <script type="module"
+          src="https://pyscript.net/releases/2025.5.1/core.js"></script>
+
+  <!-- Configuración (JSON válido) -->
+  <py-config type="json">
+  {
+    "packages": ["numpy", "sympy"],
+    "files":   { "./methods.py": "" }
+  }
+  </py-config>
+</head>
+
+<body>
+  <div class="container">
+    <img src="logo_horizontal.png" alt="Logo Ciencias Matemáticas" class="logo" />
+    <h1>Numerical Works – Suite de Optimización Web</h1>
+
+    <div class="category-buttons">
+      <button id="btn-cat1">📈 Univariante, Unimodal</button>
+      <button id="btn-cat2">📉 Univariante, Multimodal</button>
+      <button id="btn-cat3">🌍 Multivariante</button>
+    </div>
+
+    <div id="panel-unimodal"      class="method-panel hidden"></div>
+    <div id="panel-multimodal"    class="method-panel hidden"></div>
+    <div id="panel-multivariante" class="method-panel hidden"></div>
+  </div>
+
+  <!-- Lógica Python -->
+  <py-script src="main.py"></py-script>
+</body>
+</html>
